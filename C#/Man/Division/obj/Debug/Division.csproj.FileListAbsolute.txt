@@ -1,0 +1,7 @@
+E:\PROJECTS\MAN_20182019\C#\Man\Division\bin\Debug\Division.exe.config
+E:\PROJECTS\MAN_20182019\C#\Man\Division\bin\Debug\Division.exe
+E:\PROJECTS\MAN_20182019\C#\Man\Division\bin\Debug\Division.pdb
+E:\PROJECTS\MAN_20182019\C#\Man\Division\obj\Debug\Division.csprojResolveAssemblyReference.cache
+E:\PROJECTS\MAN_20182019\C#\Man\Division\obj\Debug\Division.csproj.CoreCompileInputs.cache
+E:\PROJECTS\MAN_20182019\C#\Man\Division\obj\Debug\Division.exe
+E:\PROJECTS\MAN_20182019\C#\Man\Division\obj\Debug\Division.pdb

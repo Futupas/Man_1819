@@ -10,16 +10,35 @@ namespace SmartDivision
     {
         static void Main(string[] args)
         {
+            Console.ForegroundColor = ConsoleColor.White;
             while (true)
             {
-                int a, b;
-                a = int.Parse(Console.ReadLine());
-                b = int.Parse(Console.ReadLine());
-                Console.WriteLine(Divide(a, b).ToString());
-                Console.ReadLine();
-                Console.WriteLine();
+                try
+                {
+                    int a, b;
+                    //string sa, sb;
+                    //sa = Console.ReadLine();
+                    //a = int.Parse(sa);
+                    //sb = Console.ReadLine();
+                    //b = int.Parse(sb);
+                    a = int.Parse(Console.ReadLine());
+                    b = int.Parse(Console.ReadLine());
+                    Console.WriteLine(Divide(a, b).ToString());
+                    Console.WriteLine();
+                }
+                    catch (Exception ex)
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("Error!");
+                    Console.WriteLine(ex.Message);
+                    Console.WriteLine();
+                    Console.ForegroundColor = ConsoleColor.White;
+                }
+                finally
+                {
+                    //Console.ReadLine();
+                }
             }
-            //Console.ReadLine();
         }
 
         static dec Divide(int a, int b)
@@ -57,12 +76,18 @@ namespace SmartDivision
     }
     class dec
     {
+        public dec()
+        {
+            this.integer = "";
+            this.fraction = "";
+            this.period = "";
+        }
         public string integer = "";
         public string fraction = "";
         public string period = "";
         public override string ToString()
         {
-            return this.integer + "." + this.fraction + "(" + period + ")";
+            return this.integer + "." + this.fraction + "(" + this.period + ")";
         }
     }
 }

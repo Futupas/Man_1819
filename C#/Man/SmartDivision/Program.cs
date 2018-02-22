@@ -55,47 +55,35 @@ namespace SmartDivision
         {
             int c, o;
             dec answer = new dec();
+            string ac = "";
+            int[] usedostachas = new int[b];
+            for (int i = 0; i < usedostachas.Length; i++) usedostachas[i] = -1;
 
             c = a / b;
             o = a % b;
             answer.integer = c.ToString();
             a = o;
-            Console.WriteLine("---  c={0}, o={1}, o*10={2}, uos={3}", c, o, o * 10, "-");
+            usedostachas[o] = ac.Length;
             a = a * 10;
 
-            string ac = "";
-            int[] usedostachas = new int[b];
-            for (int i = 0; i < usedostachas.Length; i++) usedostachas[i] = -1;
 
             for (int j = 0; j < b; j++)
             {
                 c = a / b;
                 o = a % b;
-                Console.WriteLine("---  c={0}, o={1}, o*10={2}, ac={3}, uos={4}", c, o, o * 10, ac, strfromarchive(usedostachas));
                 ac += c.ToString();
                 if (usedostachas[o] != -1)
                 {
-                    int f = usedostachas[o] + 1;
+                    int f = usedostachas[o];
                     answer.fraction = ac.Substring(0, f);
                     answer.period = ac.Substring(f, ac.Length - f);
                     return answer;
                 }
-                usedostachas[o] = ac.Length-1;
-                Console.WriteLine("----  ac={0}", ac);
+                usedostachas[o] = ac.Length;
                 a = o;
                 a = a * 10;
             }
             return answer;
-        }
-        static string strfromarchive(int[] ints)
-        {
-            string str = "";
-            foreach (int v in ints)
-            {
-                str += v.ToString();
-                str += ",";
-            }
-            return str.Substring(0, str.Length - 1);
         }
     }
 }

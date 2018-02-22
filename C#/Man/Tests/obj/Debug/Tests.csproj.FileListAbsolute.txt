@@ -1,0 +1,7 @@
+E:\PROJECTS\MAN_20182019\C#\Man\Tests\bin\Debug\Tests.exe.config
+E:\PROJECTS\MAN_20182019\C#\Man\Tests\bin\Debug\Tests.exe
+E:\PROJECTS\MAN_20182019\C#\Man\Tests\bin\Debug\Tests.pdb
+E:\PROJECTS\MAN_20182019\C#\Man\Tests\obj\Debug\Tests.csprojResolveAssemblyReference.cache
+E:\PROJECTS\MAN_20182019\C#\Man\Tests\obj\Debug\Tests.csproj.CoreCompileInputs.cache
+E:\PROJECTS\MAN_20182019\C#\Man\Tests\obj\Debug\Tests.exe
+E:\PROJECTS\MAN_20182019\C#\Man\Tests\obj\Debug\Tests.pdb

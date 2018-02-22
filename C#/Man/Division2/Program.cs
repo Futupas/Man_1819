@@ -12,56 +12,19 @@ namespace Division
         {
             try
             {
-                int a, b, d, ch, cile; //a/b=c
-                                       //dilene, chastka, numbers after comma
-                Console.WriteLine("a / b = c");
-                string s = Console.ReadLine();
-                string[] ab = s.Split(" ".ToCharArray(), StringSplitOptions.RemoveEmptyEntries);
-                a = Int32.Parse(ab[0]); b = Int32.Parse(ab[1]);
-                int[] numsac = new int[100];
-
-                Console.Clear();
-
-                d = a / b;
-                ch = a % b;
-                cile = d;
-                a = ch * 10;
-                for (int i = 0; i < 100; i++)
+                for (int i = 1; i <= 100; i++)
                 {
-                    d = a / b;
-                    ch = a % b;
-                    numsac[i] = d; // number
-                    a = ch * 10;
+                    //Console.WriteLine();
+                    Divide(100, i);
+                }
+                Console.WriteLine();
+                Console.WriteLine();
+                for (int i = 1; i <= 100; i++)
+                {
+                    //Console.WriteLine();
+                    Divide(i, 100);
                 }
 
-                int numac = 0;
-                for (int i = 1; i <= 20; i++)
-                {
-                    bool isntperiodic = false;
-                    for (int j = 0; j < i; j++)
-                    {
-                        if (numsac[j] != numsac[i + j]) isntperiodic = true;
-                    }
-                    if (!isntperiodic)
-                    {
-                        numac = i;
-                        break;
-                    }
-                }
-
-                if (numac == 0)
-                {
-                    Console.WriteLine("non-periodic fraction");
-                }
-                else
-                {
-                    string aftercomma = "";
-                    for (int i = 0; i < numac; i++)
-                    {
-                        aftercomma += numsac[i].ToString();
-                    }
-                    Console.WriteLine(cile.ToString() + ".(" + aftercomma + ")");
-                }
                 Console.ReadLine();
             }
             catch (Exception ex)
@@ -74,7 +37,44 @@ namespace Division
 
         static int Divide(int a, int b)
         {
+            int d, ch;
+            int[] numsac = new int[500];
 
+            d = a / b;
+            ch = a % b;
+            a = ch * 10;
+            for (int i = 0; i < 500; i++)
+            {
+                d = a / b;
+                ch = a % b;
+                numsac[i] = d; // number
+                a = ch * 10;
+            }
+
+            int numac = 0;
+            for (int i = 1; i <= 200; i++)
+            {
+                bool isntperiodic = false;
+                for (int j = 0; j < i; j++)
+                {
+                    if (numsac[j] != numsac[i + j]) isntperiodic = true;
+                }
+                if (!isntperiodic)
+                {
+                    numac = i;
+                    break;
+                }
+            }
+
+            string aftercomma = "";
+            for (int i = 0; i < 50; i++)
+            {
+                aftercomma += numsac[i].ToString();
+            }
+
+            Console.WriteLine("{0}: {1} - {2}", b, numac, aftercomma);
+
+            return numac;
         }
     }
 }

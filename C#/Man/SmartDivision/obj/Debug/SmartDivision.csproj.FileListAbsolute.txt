@@ -1,0 +1,7 @@
+E:\PROJECTS\MAN_20182019\C#\Man\SmartDivision\bin\Debug\SmartDivision.exe.config
+E:\PROJECTS\MAN_20182019\C#\Man\SmartDivision\bin\Debug\SmartDivision.exe
+E:\PROJECTS\MAN_20182019\C#\Man\SmartDivision\bin\Debug\SmartDivision.pdb
+E:\PROJECTS\MAN_20182019\C#\Man\SmartDivision\obj\Debug\SmartDivision.csprojResolveAssemblyReference.cache
+E:\PROJECTS\MAN_20182019\C#\Man\SmartDivision\obj\Debug\SmartDivision.csproj.CoreCompileInputs.cache
+E:\PROJECTS\MAN_20182019\C#\Man\SmartDivision\obj\Debug\SmartDivision.exe
+E:\PROJECTS\MAN_20182019\C#\Man\SmartDivision\obj\Debug\SmartDivision.pdb

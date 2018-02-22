@@ -4,3 +4,4 @@ E:\PROJECTS\MAN_20182019\C#\Man\Division2\bin\Debug\Division2.pdb
 E:\PROJECTS\MAN_20182019\C#\Man\Division2\obj\Debug\Division2.csproj.CoreCompileInputs.cache
 E:\PROJECTS\MAN_20182019\C#\Man\Division2\obj\Debug\Division2.exe
 E:\PROJECTS\MAN_20182019\C#\Man\Division2\obj\Debug\Division2.pdb
+E:\PROJECTS\MAN_20182019\C#\Man\Division2\obj\Debug\Division2.csprojResolveAssemblyReference.cache

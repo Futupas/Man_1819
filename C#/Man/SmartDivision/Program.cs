@@ -60,6 +60,7 @@ namespace SmartDivision
             o = a % b;
             answer.integer = c.ToString();
             a = o;
+            Console.WriteLine("---  c={0}, o={1}, o*10={2}, uos={3}", c, o, o * 10, "-");
             a = a * 10;
 
             string ac = "";
@@ -70,19 +71,31 @@ namespace SmartDivision
             {
                 c = a / b;
                 o = a % b;
+                Console.WriteLine("---  c={0}, o={1}, o*10={2}, ac={3}, uos={4}", c, o, o * 10, ac, strfromarchive(usedostachas));
+                ac += c.ToString();
                 if (usedostachas[o] != -1)
                 {
-                    int f = usedostachas[o];
+                    int f = usedostachas[o] + 1;
                     answer.fraction = ac.Substring(0, f);
                     answer.period = ac.Substring(f, ac.Length - f);
                     return answer;
                 }
-                usedostachas[o] = ac.Length;
-                ac += c.ToString();
+                usedostachas[o] = ac.Length-1;
+                Console.WriteLine("----  ac={0}", ac);
                 a = o;
                 a = a * 10;
             }
             return answer;
+        }
+        static string strfromarchive(int[] ints)
+        {
+            string str = "";
+            foreach (int v in ints)
+            {
+                str += v.ToString();
+                str += ",";
+            }
+            return str.Substring(0, str.Length - 1);
         }
     }
 }

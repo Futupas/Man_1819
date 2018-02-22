@@ -16,14 +16,9 @@ namespace SmartDivision
                 try
                 {
                     int a, b;
-                    //string sa, sb;
-                    //sa = Console.ReadLine();
-                    //a = int.Parse(sa);
-                    //sb = Console.ReadLine();
-                    //b = int.Parse(sb);
                     a = int.Parse(Console.ReadLine());
                     b = int.Parse(Console.ReadLine());
-                    Console.WriteLine(Divide(a, b).ToString());
+                    Console.WriteLine(dec.Divide(a, b).ToString());
                     Console.WriteLine();
                 }
                     catch (Exception ex)
@@ -36,12 +31,27 @@ namespace SmartDivision
                 }
                 finally
                 {
-                    //Console.ReadLine();
+                    //
                 }
             }
         }
-
-        static dec Divide(int a, int b)
+    }
+    class dec
+    {
+        public dec()
+        {
+            this.integer = "";
+            this.fraction = "";
+            this.period = "";
+        }
+        public string integer = "";
+        public string fraction = "";
+        public string period = "";
+        public override string ToString()
+        {
+            return this.integer + "." + this.fraction + "(" + this.period + ")";
+        }
+        public static dec Divide(int a, int b)
         {
             int c, o;
             dec answer = new dec();
@@ -60,7 +70,8 @@ namespace SmartDivision
             {
                 c = a / b;
                 o = a % b;
-                if (usedostachas[o] != -1) {
+                if (usedostachas[o] != -1)
+                {
                     int f = usedostachas[o];
                     answer.fraction = ac.Substring(0, f);
                     answer.period = ac.Substring(f, ac.Length - f);
@@ -72,22 +83,6 @@ namespace SmartDivision
                 a = a * 10;
             }
             return answer;
-        }
-    }
-    class dec
-    {
-        public dec()
-        {
-            this.integer = "";
-            this.fraction = "";
-            this.period = "";
-        }
-        public string integer = "";
-        public string fraction = "";
-        public string period = "";
-        public override string ToString()
-        {
-            return this.integer + "." + this.fraction + "(" + this.period + ")";
         }
     }
 }

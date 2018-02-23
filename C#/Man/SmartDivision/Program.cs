@@ -10,6 +10,7 @@ namespace SmartDivision
     {
         static void Main(string[] args)
         {
+            Console.Title = "Smart Division by Futupas.";
             Console.ForegroundColor = ConsoleColor.White;
             try
             {

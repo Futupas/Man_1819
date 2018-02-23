@@ -11,28 +11,35 @@ namespace SmartDivision
         static void Main(string[] args)
         {
             Console.ForegroundColor = ConsoleColor.White;
-            while (true)
+            try
             {
-                try
+                while (true)
                 {
                     int a, b;
                     a = int.Parse(Console.ReadLine());
                     b = int.Parse(Console.ReadLine());
-                    Console.WriteLine(dec.Divide(a, b).ToString());
+
+                    Console.WriteLine(dec.Divide(a, b));
                     Console.WriteLine();
                 }
-                    catch (Exception ex)
-                {
-                    Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine("Error!");
-                    Console.WriteLine(ex.Message);
-                    Console.WriteLine();
-                    Console.ForegroundColor = ConsoleColor.White;
-                }
-                finally
-                {
-                    //
-                }
+                
+                //for (int i = 1; i < 100; i++)
+                //{
+                //    dec d = dec.Divide(100, i);
+                //    Console.WriteLine("100 / {0} = [{1}] {2}", i, d.period.Length, d.ToString());
+                //}
+            }
+            catch (Exception ex)
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("Error!");
+                Console.WriteLine(ex.Message);
+                Console.WriteLine();
+                Console.ForegroundColor = ConsoleColor.White;
+            }
+            finally
+            {
+                Console.ReadLine();
             }
         }
     }
@@ -49,7 +56,21 @@ namespace SmartDivision
         public string period = "";
         public override string ToString()
         {
-            return this.integer + "." + this.fraction + "(" + this.period + ")";
+            if (this.period == "")
+            {
+                if (this.fraction == "" || this.fraction == "0")
+                {
+                    return this.integer;
+                }
+                else
+                {
+                    return this.integer + "." + this.fraction;
+                }
+            }
+            else
+            {
+                return this.integer + "." + this.fraction + "(" + this.period + ")";
+            }
         }
         public static dec Divide(int a, int b)
         {
@@ -65,13 +86,18 @@ namespace SmartDivision
             a = o;
             usedostachas[o] = ac.Length;
             a = a * 10;
-
-
+            
             for (int j = 0; j < b; j++)
             {
                 c = a / b;
                 o = a % b;
                 ac += c.ToString();
+                if (o == 0)
+                {
+                    answer.fraction = ac;
+                    answer.period = "";
+                    return answer;
+                }
                 if (usedostachas[o] != -1)
                 {
                     int f = usedostachas[o];
@@ -83,7 +109,7 @@ namespace SmartDivision
                 a = o;
                 a = a * 10;
             }
-            return answer;
+            throw new Exception("The fraction is not periodic.");
         }
     }
 }
